@@ -29,13 +29,12 @@
         <material>Gazebo/Red</material>
         <sensor name="laser" type="ray">
             <pose>0 0 0 0 0 0</pose>
-            <visualize>true</visualize>
+            <visualize>false</visualize>
             <update_rate>10</update_rate>
             <ray>
                 <scan>
                     <horizontal>
                         <samples>360</samples>
-                        <resolution>1</resolution>
                         <min_angle>-3.14</min_angle>
                         <max_angle>3.14</max_angle>
                     </horizontal>
@@ -43,10 +42,9 @@
                 <range>
                     <min>0.3</min>
                     <max>12</max>
-                    <resolution>0.01</resolution>
                 </range>
             </ray>
-            <plugin name="laser_controller" filename="libgazebo_rbs_ray_sensor.so">
+            <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
                 <ros>
                     <argument>~/out:=scan</argument>
                 </ros>
